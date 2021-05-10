@@ -11,6 +11,7 @@
 #ifndef DXTBX_MODEL_EXPERIMENT_H
 #define DXTBX_MODEL_EXPERIMENT_H
 
+#include <assert.h>
 #include <iostream>
 #include <cmath>
 #include <boost/shared_ptr.hpp>
@@ -172,6 +173,7 @@ namespace dxtbx { namespace model {
      * Get the beam model
      */
     boost::shared_ptr<BeamBase> get_beam() const {
+      assert(id_ >= 0);
       return beam_;
     }
 
@@ -186,6 +188,7 @@ namespace dxtbx { namespace model {
      * Get the detector model
      */
     boost::shared_ptr<Detector> get_detector() const {
+      assert(id_ >= 0);
       return detector_;
     }
 
@@ -200,6 +203,7 @@ namespace dxtbx { namespace model {
      * Get the goniometer model
      */
     boost::shared_ptr<Goniometer> get_goniometer() const {
+      assert(id_ >= 0);
       return goniometer_;
     }
 
@@ -214,6 +218,7 @@ namespace dxtbx { namespace model {
      * Get the scan model
      */
     boost::shared_ptr<Scan> get_scan() const {
+      assert(id_ >= 0);
       return scan_;
     }
 
@@ -228,6 +233,7 @@ namespace dxtbx { namespace model {
      * Get the crystal model
      */
     boost::shared_ptr<CrystalBase> get_crystal() const {
+      assert(id_ >= 0);
       return crystal_;
     }
 
@@ -242,6 +248,7 @@ namespace dxtbx { namespace model {
      * Get the profile model
      */
     boost::python::object get_profile() const {
+      assert(id_ >= 0);
       return profile_;
     }
 
@@ -256,6 +263,7 @@ namespace dxtbx { namespace model {
      * Get the imageset model
      */
     boost::python::object get_imageset() const {
+      assert(id_ >= 0);
       return imageset_;
     }
 
@@ -270,6 +278,7 @@ namespace dxtbx { namespace model {
      * Get the scaling model
      */
     boost::python::object get_scaling_model() const {
+      assert(id_ >= 0);
       return scaling_model_;
     }
 
@@ -284,6 +293,7 @@ namespace dxtbx { namespace model {
      * Get the identifier
      */
     std::string get_identifier() const {
+      assert(id_ >= 0);
       return identifier_;
     }
 
@@ -298,6 +308,7 @@ namespace dxtbx { namespace model {
      * Get the index
      */
     int get_index() const {
+      assert(id_ >= 0);
       return index_;
     }
 
